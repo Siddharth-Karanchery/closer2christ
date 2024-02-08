@@ -1,0 +1,16 @@
+.Navbar {
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-between;
+}
+.Navbar__logo {
+  width: 6rem;
+  height: 4rem;
+}
+.Navbar__tabs {
+  display: flex;
+  flex-direction: row;
+}
+.Navbar__tabs__tab {
+  padding: 0 20px;
+}
