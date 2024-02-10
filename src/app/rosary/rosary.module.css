@@ -1,0 +1,40 @@
+.Rosary {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 95vh;
+  padding: 50px 20px;
+  gap: 20px;
+  width: 100vw;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+.Rosary__ele {
+  width: 30%;
+  height: 350px;
+}
+.Rosary__card {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(63, 63, 63);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+.Rosary__card__title {
+  text-transform: uppercase;
+  text-align: center;
+}
+.Rosary__card__image {
+  width: 400px;
+  height: 200px;
+  margin: 10px;
+}
+.Rosary__card__note {
+  height: 10%;
+  width: 85%;
+  text-align: center;
+}
