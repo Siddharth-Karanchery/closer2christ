@@ -4,3 +4,10 @@ interface voutdType {
   text: string;
   verse: string;
 }
+
+interface mysteryType {
+  title: string;
+  imageLink: string;
+  note: string;
+  reflection: string;
+}

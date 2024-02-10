@@ -1,0 +1,48 @@
+.Mystery {
+  height: 95vh;
+  display: flex;
+  flex-direction: row;
+}
+.Mystery__Left {
+  width: 20%;
+  background-color: blue;
+}
+.Mystery__Center {
+  max-height: 100%;
+  padding: 0 10px 10px 0;
+  overflow: scroll;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.Mystery__Right {
+  width: 30%;
+  background-color: yellow;
+}
+.Mystery__Card {
+  width: 95%;
+  background-color: rgb(63, 63, 63);
+  margin: 10px 0;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.Mystery__Center:first-child {
+  padding-top: 0;
+  margin-top: 0;
+}
+.Mystery__Card__img {
+  width: 50%;
+  height: 50%;
+  margin: 10px 0;
+}
+.Mystery__Card__reflection {
+  width: 90%;
+  text-align: justify;
+  margin: 30px 0;
+}

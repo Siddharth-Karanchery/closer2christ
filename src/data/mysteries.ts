@@ -192,7 +192,7 @@ export const gloriousMysteries = [
   {
     title: "Mary is Crowned as Queen of Heaven and Earth",
     imageLink:
-      "https://media.ascensionpress.com/wp-content/uploads/2015/06/Diego_Vela%CC%81zquez_-_Coronation_of_the_Virgin_-_Prado-1024x539.jpg",
+      "https://images.opusdei.org/?url=https://s3-eu-west-1.amazonaws.com/images-opus-dei/image/velazquez_20200819185239688704.jpg&w=600&il&output=webp&q=85",
     note: "Recite 'Glory Be', followed by 'Fatima Prayer'",
     reflection:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vel hendrerit eros, vel hendrerit mi. Sed in euismod ipsum. Nullam vel orci nec dolor ullamcorper viverra. Nulla maximus fringilla risus id posuere. Quisque ut libero volutpat, facilisis massa et, dictum tellus. Aenean quis ex sollicitudin, congue libero eu, ultrices diam. Quisque metus sem, hendrerit sit amet rhoncus sed, sollicitudin vel risus. Suspendisse viverra suscipit varius. Sed accumsan tellus tellus, nec volutpat mauris rhoncus et. Donec aliquam pulvinar ipsum ut auctor.Proin at dictum mi. Vestibulum varius ex in urna dictum tempus. Duis sit amet turpis ultrices, faucibus justo in, maximus augue. Curabitur non orci ante. Praesent consequat blandit nisi, eget volutpat ante dictum vitae. Suspendisse sit amet consectetur libero. Aliquam et egestas elit.",
