@@ -8,7 +8,8 @@ import {
 } from "@/data/mysteries";
 
 import styles from "./mystery.module.css";
-import { Box, Typography } from "@mui/material";
+import { Box, Card, Paper, Tooltip, Typography } from "@mui/material";
+import { prayerGuidePrayers } from "@/data/prayers";
 
 function Mystery({ params }: { params: { mystery: string } }) {
   let mysteryData: mysteryType[] = [];
@@ -72,7 +73,24 @@ function Mystery({ params }: { params: { mystery: string } }) {
             </Box>
           ))}
         </Box>
-        <Box className={styles.Mystery__Right}>Right</Box>
+        <Box className={styles.Mystery__Right}>
+          <Paper className={styles.Mystery__Right__card}>
+            <Typography variant="h6">Rosary Reference</Typography>
+            <Tooltip title="https://www.dummies.com/article/body-mind-spirit/religion-spirituality/christianity/catholicism/how-to-pray-the-rosary-192609/">
+              <img
+                src="https://www.dummies.com/wp-content/uploads/195875.image0.jpg"
+                style={{ mixBlendMode: "multiply" }}
+                alt="rosary reference"
+              />
+            </Tooltip>
+          </Paper>
+          {prayerGuidePrayers.map((prayer) => (
+            <Paper key={prayer.name} className={styles.Mystery__Right__card}>
+              <Typography variant="h6">{prayer.name}</Typography>
+              <Typography variant="body1">{prayer.prayer}</Typography>
+            </Paper>
+          ))}
+        </Box>
       </Box>
     </Box>
   );
