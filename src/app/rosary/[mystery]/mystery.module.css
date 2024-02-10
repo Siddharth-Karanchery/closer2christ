@@ -1,11 +1,27 @@
 .Mystery {
-  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.Mystery__Title {
+  text-transform: uppercase;
+  margin: 10px;
+}
+.Mystery__Panel {
+  height: 90vh;
   display: flex;
   flex-direction: row;
 }
 .Mystery__Left {
   width: 20%;
-  background-color: blue;
+}
+.Mystery__Spotify {
+  background-color: transparent;
+  border: 0px;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
 }
 .Mystery__Center {
   max-height: 100%;
@@ -39,7 +55,11 @@
 .Mystery__Card__img {
   width: 50%;
   height: 50%;
-  margin: 10px 0;
+  min-width: 300px;
+  min-height: 250px;
+  max-height: 250px;
+  object-fit: fill;
+  margin: 20px 0;
 }
 .Mystery__Card__reflection {
   width: 90%;
