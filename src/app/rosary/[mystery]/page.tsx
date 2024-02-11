@@ -72,6 +72,24 @@ function Mystery({ params }: { params: { mystery: string } }) {
               </Typography>
             </Box>
           ))}
+          <Typography variant="h5" margin={"20px 0 10px 0"}>
+            After the 5th Mystery{" "}
+          </Typography>
+          <Box className={styles.Mystery__Card}>
+            <Typography variant="h4">Hail Holy Queen (Salve Regina)</Typography>
+            <Typography
+              variant="h6"
+              className={styles.Mystery__Card__reflection}
+            >
+              Hail, holy Queen, Mother of mercy, our life, our sweetness and our
+              hope. To thee do we cry, poor banished children of Eve. To thee do
+              we send up our sighs, mourning and weeping in this valley of
+              tears. Turn, then, most gracious advocate, thine eyes of mercy
+              toward us, and after this, our exile, show unto us the blessed
+              fruit of thy womb, Jesus. O clement, O loving, O sweet Virgin
+              Mary.
+            </Typography>
+          </Box>
         </Box>
         <Box className={styles.Mystery__Right}>
           <Paper className={styles.Mystery__Right__card}>
