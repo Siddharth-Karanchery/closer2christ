@@ -13,28 +13,23 @@ function Votd() {
     });
   }, []);
 
-  console.log("verse: ", verse);
-
   let verseText: string = "";
   verse?.forEach((line) => {
-    console.log("line.text: ", line.text);
-    verseText = verseText + line.text;
+    verseText += line.text;
   });
-
-  console.log("verseText: ", verseText);
 
   return (
     <Box className={styles.Votd}>
       <Box className={styles.Votd__frame}>
-        <Typography variant="h3">Verse of the day</Typography>
+        <Typography variant="h4">Verse of the day</Typography>
         {verse && (
           <Box className={styles.Votd__frame__body}>
-            <Typography variant="h4">{`${verse[0]?.bookname} ${
-              verse[0]?.chapter
-            }: ${verse[0]?.verse}-${
+            <Typography variant="h5" fontWeight={"bold"}>{`${
+              verse[0]?.bookname
+            } ${verse[0]?.chapter}: ${verse[0]?.verse}-${
               verse[verse.length - 1]?.verse
             }`}</Typography>
-            <Typography variant="h6">{verseText}</Typography>
+            <Typography variant="h6">{`"${verseText}"`}</Typography>
           </Box>
         )}
       </Box>
