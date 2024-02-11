@@ -77,6 +77,12 @@ function Mystery({ params }: { params: { mystery: string } }) {
           </Typography>
           <Box className={styles.Mystery__Card}>
             <Typography variant="h4">Hail Holy Queen (Salve Regina)</Typography>
+            <img
+              src="https://img.freepik.com/premium-photo/virgen-del-carmen-blessed-virgin-mary-faith-bible-theology-mother-god-christianity-carmel-mother-jesus-christ-one-central-figures-european-world-culture-generative-ai_887181-3576.jpg"
+              className={styles.Mystery__Card__img}
+              alt="mystery image"
+            />
+
             <Typography
               variant="h6"
               className={styles.Mystery__Card__reflection}
