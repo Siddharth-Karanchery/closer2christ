@@ -56,6 +56,7 @@ function Mystery({ params }: { params: { mystery: string } }) {
           {mysteryData.map((mystery) => (
             <Box className={styles.Mystery__Card} key={mystery.title}>
               <Typography variant="h4">{mystery.title}</Typography>
+
               <img
                 src={mystery.imageLink}
                 className={styles.Mystery__Card__img}

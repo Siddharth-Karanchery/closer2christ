@@ -33,3 +33,56 @@ export const salveRegina = [
       "Hail, holy Queen, mother of Mercy.\n Hail, our life, our sweetness and our hope.\n To thee do we cry,\n poor banished children of Eve;\n to thee do we send up our sighs,\n mourning and weeping,\n in this vale of tears.\n Turn then, most gracious advocate,\n thine eyes of mercy toward us;\n and after this our exile, show unto us\n the blessed fruit of thy womb, Jesus.\n O clement, O loving,\n O sweet virgin Mary.",
   },
 ];
+
+export const prayerData = [
+  {
+    name: "Prayer 1",
+    prayer:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam voluptate consequatur tenetur voluptatum quam magnam quia! Voluptatum nemo facere commodi facilis animi, delectus consectetur sapiente harum soluta architecto dolores. Libero.1",
+  },
+  {
+    name: "Prayer 2",
+    prayer:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam voluptate consequatur tenetur voluptatum quam magnam quia! Voluptatum nemo facere commodi facilis animi, delectus consectetur sapiente harum soluta architecto dolores. Libero.2",
+  },
+  {
+    name: "Prayer 3",
+    prayer:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam voluptate consequatur tenetur voluptatum quam magnam quia! Voluptatum nemo facere commodi facilis animi, delectus consectetur sapiente harum soluta architecto dolores. Libero.3",
+  },
+  {
+    name: "Prayer 4",
+    prayer:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam voluptate consequatur tenetur voluptatum quam magnam quia! Voluptatum nemo facere commodi facilis animi, delectus consectetur sapiente harum soluta architecto dolores. Libero.4",
+  },
+  {
+    name: "Prayer 5",
+    prayer:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam voluptate consequatur tenetur voluptatum quam magnam quia! Voluptatum nemo facere commodi facilis animi, delectus consectetur sapiente harum soluta architecto dolores. Libero.5",
+  },
+  {
+    name: "Prayer 1",
+    prayer:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam voluptate consequatur tenetur voluptatum quam magnam quia! Voluptatum nemo facere commodi facilis animi, delectus consectetur sapiente harum soluta architecto dolores. Libero.1",
+  },
+  {
+    name: "Prayer 2",
+    prayer:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam voluptate consequatur tenetur voluptatum quam magnam quia! Voluptatum nemo facere commodi facilis animi, delectus consectetur sapiente harum soluta architecto dolores. Libero.2",
+  },
+  {
+    name: "Prayer 3",
+    prayer:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam voluptate consequatur tenetur voluptatum quam magnam quia! Voluptatum nemo facere commodi facilis animi, delectus consectetur sapiente harum soluta architecto dolores. Libero.3",
+  },
+  {
+    name: "Prayer 4",
+    prayer:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam voluptate consequatur tenetur voluptatum quam magnam quia! Voluptatum nemo facere commodi facilis animi, delectus consectetur sapiente harum soluta architecto dolores. Libero.4",
+  },
+  {
+    name: "Prayer 5",
+    prayer:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam voluptate consequatur tenetur voluptatum quam magnam quia! Voluptatum nemo facere commodi facilis animi, delectus consectetur sapiente harum soluta architecto dolores. Libero.5",
+  },
+];

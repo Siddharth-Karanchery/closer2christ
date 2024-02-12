@@ -9,8 +9,6 @@ import Link from "next/link";
 function Rosary() {
   const pathname = usePathname();
 
-  console.log("pathname: ", pathname);
-
   return (
     <Box className={styles.Rosary}>
       {mysteriesData.map((mystery) => (
