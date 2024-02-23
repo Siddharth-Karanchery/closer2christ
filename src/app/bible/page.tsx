@@ -53,20 +53,22 @@ function Bible() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selBook]);
 
-  // React.useEffect(() => {
-  //   axios
-  //     .get(
-  //       `https://api.scripture.api.bible//v1/bibles/${selBible}/chapters/${selChapter}/verses`,
-  //       {
-  //         headers: { "api-key": "1bc71a5553447160556f92fa1b817af4" },
-  //       }
-  //     )
-  //     .then((res) => {
-  //       console.log("Verses: ", res.data.data);
-  //       // setSections(res.data.data);
-  //     });
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [selChapter]);
+  React.useEffect(() => {
+    console.log("selBible: ", selBible);
+    console.log("selChapter: ", selChapter);
+    axios
+      .get(
+        `https://api.scripture.api.bible/v1/bibles/${selBible}/chapters/${selChapter}/verses`,
+        {
+          headers: { "api-key": "1bc71a5553447160556f92fa1b817af4" },
+        }
+      )
+      .then((res) => {
+        console.log("Verses: ", res.data.data);
+        setVerses(res.data.data);
+      });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selChapter]);
 
   const handleBibleSelect = (e: any) => {
     setSelBible(e.target.value);
@@ -77,7 +79,7 @@ function Bible() {
   };
 
   const handleChapterSelect = (e: any) => {
-    console.log("e:", e.target);
+    console.log("e:", e.target.value);
     setSelChapter(e.target.value);
   };
   return (
@@ -126,16 +128,16 @@ function Bible() {
             </option>
           ))}
         </select>
-        {/* <select className={styles.Bible__filterPanel__filter} title="test">
+        <select className={styles.Bible__filterPanel__filter} title="test">
           <option value="" disabled selected>
             <em>Select a Verse</em>
           </option>
-          {sections.map((section) => (
-            <option value={bible.id} key={bible.label}>
-              {bible.label}
+          {verses.map((verse) => (
+            <option value={verse.id} key={verse.label}>
+              {verse.label}
             </option>
           ))}
-        </select> */}
+        </select>
       </Box>
       Bible
     </Box>
