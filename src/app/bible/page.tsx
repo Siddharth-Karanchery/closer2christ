@@ -1,9 +1,9 @@
 "use client";
-import { Box, Select, MenuItem, InputLabel } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import axios from "axios";
 import * as React from "react";
-import InputBase from "@mui/material/InputBase";
-import { styled } from "@mui/material/styles";
+import SearchIcon from "@mui/icons-material/Search";
+import { API_KEY } from "../../data/data";
 
 import styles from "./Bible.module.css";
 
@@ -19,7 +19,7 @@ function Bible() {
   React.useEffect(() => {
     axios
       .get(`https://api.scripture.api.bible/v1/bibles`, {
-        headers: { "api-key": "1bc71a5553447160556f92fa1b817af4" },
+        headers: { "api-key": API_KEY },
       })
       .then((res) => {
         console.log("bibles: ", res.data.data);
@@ -30,7 +30,7 @@ function Bible() {
   React.useEffect(() => {
     axios
       .get(`https://api.scripture.api.bible/v1/bibles/${selBible}/books`, {
-        headers: { "api-key": "1bc71a5553447160556f92fa1b817af4" },
+        headers: { "api-key": API_KEY },
       })
       .then((res) => {
         console.log("books: ", res.data.data);
@@ -43,7 +43,7 @@ function Bible() {
       .get(
         `https://api.scripture.api.bible/v1/bibles/${selBible}/books/${selBook}/chapters`,
         {
-          headers: { "api-key": "1bc71a5553447160556f92fa1b817af4" },
+          headers: { "api-key": API_KEY },
         }
       )
       .then((res) => {
@@ -54,13 +54,11 @@ function Bible() {
   }, [selBook]);
 
   React.useEffect(() => {
-    console.log("selBible: ", selBible);
-    console.log("selChapter: ", selChapter);
     axios
       .get(
         `https://api.scripture.api.bible/v1/bibles/${selBible}/chapters/${selChapter}/verses`,
         {
-          headers: { "api-key": "1bc71a5553447160556f92fa1b817af4" },
+          headers: { "api-key": API_KEY },
         }
       )
       .then((res) => {
@@ -79,8 +77,25 @@ function Bible() {
   };
 
   const handleChapterSelect = (e: any) => {
-    console.log("e:", e.target.value);
     setSelChapter(e.target.value);
+  };
+
+  const handleVerseSelect = (e: any) => {
+    setSelVerse(e.target.value);
+  };
+
+  const handleSearch = (e: any) => {
+    const passageID = selVerse ? selVerse : selChapter;
+    axios
+      .get(
+        `https://api.scripture.api.bible/v1/bibles/${selBible}/passages/${passageID}?content-type=json&include-notes=false&include-titles=false&include-chapter-numbers=false&include-verse-numbers=true&include-verse-spans=false&use-org-id=false`,
+        {
+          headers: { "api-key": API_KEY },
+        }
+      )
+      .then((res) => {
+        console.log("Passage: ", res.data.data);
+      });
   };
   return (
     <Box className={styles.Bible}>
@@ -128,16 +143,28 @@ function Bible() {
             </option>
           ))}
         </select>
-        <select className={styles.Bible__filterPanel__filter} title="test">
+        <select
+          className={styles.Bible__filterPanel__filter}
+          title="test"
+          onChange={handleVerseSelect}
+        >
           <option value="" disabled selected>
             <em>Select a Verse</em>
           </option>
           {verses.map((verse) => (
-            <option value={verse.id} key={verse.label}>
-              {verse.label}
+            <option value={verse.id} key={verse.id}>
+              {verse.id.split(".")[2]}
             </option>
           ))}
         </select>
+        <Button
+          variant="contained"
+          startIcon={<SearchIcon />}
+          onClick={handleSearch}
+          disabled={!selChapter}
+        >
+          Search
+        </Button>
       </Box>
       Bible
     </Box>
