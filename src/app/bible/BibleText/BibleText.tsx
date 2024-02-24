@@ -4,32 +4,42 @@ import styles from "./BibleText.module.css";
 import { Box, Typography } from "@mui/material";
 
 function BibleText(props: any) {
-  console.log("props: ", props);
   let displayText = "";
 
-  console.log(props.verse.slice(1));
-  props.verse.slice(1).forEach((ele: any) => {
-    console.log("ele: ", ele);
+  props.verse.forEach((ele: any) => {
     if (ele.type === "text") {
-      console.log("text: ", ele);
       displayText = displayText + ele.text;
     } else if (ele.type === "tag") {
-      console.log("text: ", ele);
       displayText = displayText + ele.items[0].text;
     }
   });
 
-  console.log("displayText: ", displayText);
+  function replaceNumberWithNewline(inputString: any) {
+    var pattern = /\d+/g;
+    var matches = inputString.match(pattern);
+
+    var resultString = inputString;
+    if (matches) {
+      matches.forEach(function (number: string) {
+        var replacement = "\n\n" + number + ". ";
+        resultString = resultString.replace(number, replacement);
+      });
+    }
+
+    return resultString;
+  }
+
   return (
     <Box className={styles.BibleText}>
       <Typography
-        variant="h6"
-        style={{ fontWeight: "bold", marginRight: "5px" }}
+        style={{
+          textAlign: "justify",
+          marginBottom: "-20px",
+          whiteSpace: "pre-line",
+        }}
       >
-        {props.verse[0].attrs.number}
+        {replaceNumberWithNewline(displayText.replace("¶", ""))}
       </Typography>
-      <Typography>{displayText}</Typography>
-      <br />
     </Box>
   );
 }

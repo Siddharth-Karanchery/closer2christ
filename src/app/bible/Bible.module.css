@@ -28,7 +28,8 @@
   margin: 10px;
 }
 .Bible__passage {
-  width: 80vw;
+  width: 60vw;
   background-color: rgb(120, 120, 120);
   padding: 20px;
+  margin-bottom: 50px;
 }
