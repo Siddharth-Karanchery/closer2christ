@@ -1,11 +1,12 @@
 "use client";
-import { Box, Button } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import axios from "axios";
 import * as React from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import { API_KEY } from "../../data/data";
 
 import styles from "./Bible.module.css";
+import BibleText from "./BibleText/BibleText";
 
 function Bible() {
   const [bibles, setBibles] = React.useState<any[]>([]);
@@ -16,6 +17,7 @@ function Bible() {
   const [selChapter, setSelChapter] = React.useState<string>("");
   const [verses, setVerses] = React.useState<any[]>([]);
   const [selVerse, setSelVerse] = React.useState<string>("");
+  const [passage, setPassage] = React.useState<any[]>([]);
   React.useEffect(() => {
     axios
       .get(`https://api.scripture.api.bible/v1/bibles`, {
@@ -98,7 +100,8 @@ function Bible() {
         }
       )
       .then((res) => {
-        console.log("Passage: ", res.data.data);
+        console.log("Passage: ", res.data.data.content);
+        setPassage(res.data.data.content);
       });
   };
   return (
@@ -170,7 +173,13 @@ function Bible() {
           Search
         </Button>
       </Box>
-      Bible
+      <Box className={styles.Bible__passage}>
+        {passage &&
+          passage.map((element, index) => {
+            console.log("element: ", element);
+            return <BibleText key={index} verse={element.items} />;
+          })}
+      </Box>
     </Box>
   );
 }
