@@ -22,8 +22,12 @@ function Bible() {
         headers: { "api-key": API_KEY },
       })
       .then((res) => {
-        console.log("bibles: ", res.data.data);
-        setBibles(res.data.data);
+        let sorted = res.data.data.sort((a: any, b: any) =>
+          a.name > b.name ? 1 : b.name > a.name ? -1 : 0
+        ); // b - a for reverse sort
+
+        console.log("bibles: ", sorted);
+        setBibles(sorted);
       });
   }, []);
 
