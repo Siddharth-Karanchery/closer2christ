@@ -1,10 +1,18 @@
 .About {
   min-height: 95vh;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   color: white;
+}
+.About__ele {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
 }
 .About__left,
 .About__right {
@@ -40,4 +48,14 @@
 .About__right__sign {
   padding-left: 20px;
   align-self: flex-start;
+}
+
+#flip {
+  flex-direction: row-reverse;
+}
+.About__listItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
 }
