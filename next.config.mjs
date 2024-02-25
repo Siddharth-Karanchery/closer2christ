@@ -12,6 +12,8 @@ const nextConfig = {
       },
     ],
   },
+  output: "export", // <=== enables static exports
+  basePath: "/closer2christ",
 };
 
 export default nextConfig;
