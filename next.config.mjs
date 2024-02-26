@@ -12,8 +12,6 @@ const nextConfig = {
       },
     ],
   },
-
-  basePath: "/closer2christ",
 };
 
 export default nextConfig;
