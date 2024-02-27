@@ -1,12 +1,34 @@
 "use client";
-import { prayerData } from "@/data/prayers";
+import * as React from "react";
+
 import { Box, Typography } from "@mui/material";
 import styles from "./prayers.module.css";
 
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../utils/firebase";
+
 //@ts-ignore
 import Flippy, { FrontSide, BackSide } from "react-flippy";
+import FlipCard from "./FlipCard/FlipCard";
 
 function Prayers() {
+  const [prayerData, setPrayerData] = React.useState<{ [x: string]: any }[]>(
+    []
+  );
+  const fetchPrayerData = async () => {
+    await getDocs(collection(db, "Prayers")).then((result) => {
+      const data = result.docs.map((doc) => ({
+        ...doc.data(),
+      }));
+      console.log("data: ", data);
+      setPrayerData(data);
+    });
+  };
+
+  React.useEffect(() => {
+    fetchPrayerData();
+  }, []);
+
   return (
     <Box className={styles.prayers}>
       {prayerData.map((prayer) => (
@@ -15,19 +37,12 @@ function Prayers() {
           flipOnHover={false} // default false
           flipOnClick={true} // default false
           flipDirection="horizontal" // horizontal or vertical
-          style={{
-            width: "30rem",
-            height: "20rem",
-            backgroundColor: "rgb(120, 120, 120)",
-          }} /// these are optional style, it is not necessary
         >
           <FrontSide>
-            <Typography variant={"h4"}>{prayer.name}</Typography>
+            <FlipCard text={prayer.name} type={"front"} />
           </FrontSide>
           <BackSide>
-            <Typography variant={"h6"} sx={{ cursor: "pointer" }}>
-              {prayer.prayer}
-            </Typography>
+            <FlipCard text={prayer.prayer} type={"back"} />
           </BackSide>
         </Flippy>
       ))}
