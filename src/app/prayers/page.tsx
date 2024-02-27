@@ -20,7 +20,6 @@ function Prayers() {
       const data = result.docs.map((doc) => ({
         ...doc.data(),
       }));
-      console.log("data: ", data);
       setPrayerData(data);
     });
   };
@@ -39,7 +38,7 @@ function Prayers() {
           flipDirection="horizontal" // horizontal or vertical
         >
           <FrontSide>
-            <FlipCard text={prayer.name} type={"front"} />
+            <FlipCard text={[prayer.name]} type={"front"} />
           </FrontSide>
           <BackSide>
             <FlipCard text={prayer.prayer} type={"back"} />

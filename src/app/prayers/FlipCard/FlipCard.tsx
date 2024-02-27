@@ -7,16 +7,19 @@ function FlipCard(props: any) {
   let textVariant = props.type === "front" ? "h4" : "h6";
   return (
     <Box className={styles.FlipCard}>
-      <Typography
-        /*@ts-ignore*/
-        variant={textVariant}
-        className={styles.FlipCard__text}
-        style={{
-          whiteSpace: "pre-line",
-        }}
-      >
-        {props.text}
-      </Typography>
+      {props.text.map((line: string, index: number) => (
+        <Typography
+          key={index}
+          /*@ts-ignore*/
+          variant={textVariant}
+          className={styles.FlipCard__text}
+          style={{
+            margin: "5px 0",
+          }}
+        >
+          {line}
+        </Typography>
+      ))}
     </Box>
   );
 }
