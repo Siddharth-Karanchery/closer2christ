@@ -1,3 +1,27 @@
-.Home {
-  margin-top: 50rem;
+.Home__image {
+  width: 100vw;
+  height: 90vh;
+  object-fit: contain;
+}
+/*-------------- Responsive Design ------------------- */
+/*-------------- MOBILE ------------------- */
+@media screen and (max-width: 450px) {
+  .Home {
+    margin-top: 2rem;
+  }
+  .Home__image {
+    height: 30vh;
+    object-fit: contain;
+  }
+}
+
+/*-------------- TABLET ------------------- */
+@media screen and (max-width: 850px) and (min-width: 450px) {
+  .Home {
+    margin-top: 2rem;
+  }
+  .Home__image {
+    height: 30vh;
+    object-fit: contain;
+  }
 }

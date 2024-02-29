@@ -2,7 +2,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* height: 50vh; */
   padding: 20px;
 }
 .Votd__frame {
@@ -25,4 +24,29 @@
   height: 30%;
   margin-top: 2rem;
   text-align: center;
+}
+/*-------------- Responsive Design ------------------- */
+/*-------------- MOBILE ------------------- */
+@media screen and (max-width: 450px) {
+  .Votd__frame {
+    height: 60vh;
+    width: 100vw;
+    background-image: url("../../../assets/whiteframe_mobile.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Votd__frame__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 75%;
+    height: 60%;
+    text-align: center;
+  }
 }
