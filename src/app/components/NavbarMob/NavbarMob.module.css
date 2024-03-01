@@ -1,0 +1,9 @@
+.NavbarMob {
+  width: 35vw;
+  background-color: black;
+  color: white;
+  height: 100%;
+}
+.NavbarMob__tabs {
+  text-align: center;
+}
