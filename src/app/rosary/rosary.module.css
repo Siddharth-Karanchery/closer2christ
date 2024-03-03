@@ -29,7 +29,7 @@
   text-align: center;
 }
 .Rosary__card__image {
-  width: 400px;
+  width: 90%;
   height: 200px;
   margin: 10px;
 }
@@ -37,4 +37,35 @@
   height: 10%;
   width: 85%;
   text-align: center;
+}
+/*-------------- Responsive Design ------------------- */
+/*-------------- MOBILE ------------------- */
+@media screen and (max-width: 450px) {
+  .Rosary {
+    flex-direction: column;
+    align-items: flex-start;
+    height: fit-content;
+  }
+  .Rosary__ele {
+    width: 100%;
+    height: 350px;
+  }
+  .Rosary__card__image {
+    width: 95%;
+    height: 200px;
+    margin: 10px;
+  }
+}
+
+/*-------------- TABLET ------------------- */
+@media screen and (max-width: 850px) and (min-width: 450px) {
+  .Rosary__ele {
+    width: 45%;
+    height: 350px;
+  }
+  .Rosary__card__image {
+    width: 95%;
+    height: 200px;
+    margin: 10px;
+  }
 }
