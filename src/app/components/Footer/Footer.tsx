@@ -10,7 +10,7 @@ function Footer() {
       <Box className={styles.Footer__panel}>
         <Box className={styles.Footer__panel__ele}>
           <Typography variant="h4">Closer to Christ</Typography>
-          <Typography>
+          <Typography sx={{ textAlign: "center" }}>
             “Rejoice in hope, be patient in tribulation, be constant in prayer.”
             - Romans 12:12
           </Typography>

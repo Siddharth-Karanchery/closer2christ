@@ -19,3 +19,24 @@
   flex-direction: column;
   align-items: center;
 }
+
+/*-------------- Responsive Design ------------------- */
+/*-------------- MOBILE ------------------- */
+@media screen and (max-width: 450px) {
+  .Footer__panel {
+    flex-direction: column;
+  }
+  .Footer__panel__ele {
+    margin: 1rem 0;
+  }
+}
+
+/*-------------- TABLET ------------------- */
+@media screen and (max-width: 850px) and (min-width: 450px) {
+  .Footer__panel {
+    flex-direction: column;
+  }
+  .Footer__panel__ele {
+    margin: 1rem 0;
+  }
+}
