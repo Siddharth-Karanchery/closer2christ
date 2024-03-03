@@ -13,3 +13,14 @@
   text-align: justify;
   margin: 10px 0;
 }
+/*-------------- Responsive Design ------------------- */
+/*-------------- MOBILE ------------------- */
+@media screen and (max-width: 450px) {
+  .FlipCard {
+    background-color: rgb(120, 120, 120);
+    width: 95vw;
+    height: 40vh;
+    justify-content: flex-start;
+    overflow: scroll;
+  }
+}
