@@ -17,6 +17,7 @@
 
 .AboutEle__left {
   margin-right: 10px;
+  text-align: center;
 }
 
 .AboutEle__right {
@@ -51,4 +52,47 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
+}
+
+/*-------------- Responsive Design ------------------- */
+/*-------------- MOBILE ------------------- */
+@media screen and (max-width: 450px) {
+  .AboutEle {
+    flex-direction: column;
+  }
+  #flip {
+    flex-direction: column;
+  }
+  .AboutEle__left,
+  .AboutEle__right {
+    height: fit-content;
+    width: 90vw;
+  }
+  .AboutEle__right {
+    margin-top: 10px;
+  }
+  .AboutEle_left__image {
+    width: 95%;
+  }
+}
+
+/*-------------- TABLET ------------------- */
+@media screen and (max-width: 850px) and (min-width: 450px) {
+  .AboutEle {
+    flex-direction: column;
+  }
+  #flip {
+    flex-direction: column;
+  }
+  .AboutEle__left,
+  .AboutEle__right {
+    height: fit-content;
+    width: 90vw;
+  }
+  .AboutEle__left {
+    margin: 10px 0;
+  }
+  .AboutEle_left__image {
+    width: 95%;
+  }
 }

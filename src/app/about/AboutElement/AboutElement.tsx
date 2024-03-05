@@ -60,7 +60,7 @@ function AboutElement(props: any) {
                     variant="h6"
                     className={styles.AboutEle__listItem}
                   >
-                    API for Bible content by API.Bible
+                    {listItem.text}
                     {listItem.url ? (
                       <LinkIcon
                         style={{ fontSize: "medium", marginLeft: "10px" }}
