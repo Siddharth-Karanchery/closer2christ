@@ -52,3 +52,35 @@
   justify-content: space-evenly;
   width: 50%;
 }
+/*-------------- Responsive Design ------------------- */
+/*-------------- MOBILE ------------------- */
+@media screen and (max-width: 450px) {
+  .Contact {
+    flex-direction: column;
+  }
+  .Contact__left,
+  .Contact__right {
+    margin: 10px 0;
+    height: 50vh;
+    width: 95vw;
+  }
+  .Contact__right {
+    height: 70vh;
+  }
+  .Contact__right__form__buttonPanel {
+    width: 80%;
+  }
+}
+
+/*-------------- TABLET ------------------- */
+@media screen and (max-width: 850px) and (min-width: 450px) {
+  .Contact {
+    flex-direction: column;
+  }
+  .Contact__left,
+  .Contact__right {
+    margin: 10px 0;
+    height: 50vh;
+    width: 95vw;
+  }
+}
