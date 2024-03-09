@@ -88,3 +88,58 @@
   margin: 10px;
   padding: 20px 30px;
 }
+/*-------------- Responsive Design ------------------- */
+/*-------------- MOBILE ------------------- */
+@media screen and (max-width: 450px) {
+  .Mystery__Title {
+    text-align: center;
+  }
+  .Mystery__Panel {
+    width: 100%;
+    padding: 5px;
+    flex-direction: column-reverse;
+    align-items: center;
+    height: fit-content;
+  }
+  .Mystery__Left,
+  .Mystery__Center,
+  .Mystery__Right {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .Mystery__Center {
+    height: 75vh;
+  }
+
+  .Mystery__Right {
+    height: 55vh;
+  }
+}
+/*-------------- TABLET ------------------- */
+@media screen and (max-width: 850px) and (min-width: 450px) {
+  .Mystery__Title {
+    text-align: center;
+  }
+  .Mystery__Panel {
+    width: 100%;
+    padding: 5px;
+    flex-direction: column-reverse;
+    align-items: center;
+    height: fit-content;
+  }
+  .Mystery__Left,
+  .Mystery__Center,
+  .Mystery__Right {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .Mystery__Center {
+    height: 60vh;
+  }
+
+  .Mystery__Right {
+    height: 40vh;
+  }
+}

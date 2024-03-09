@@ -6,14 +6,16 @@ import {
   luminousMysteries,
   sorrowfulMysteries,
 } from "@/data/mysteries";
-
+import useMediaQuery from "@mui/material/useMediaQuery";
 import styles from "./mystery.module.css";
-import { Box, Card, Paper, Tooltip, Typography } from "@mui/material";
+import { Box, Paper, Tooltip, Typography } from "@mui/material";
 import { prayerGuidePrayers } from "@/data/prayers";
 
 function Mystery({ params }: { params: { mystery: string } }) {
   let mysteryData: mysteryType[] = [];
   let mysteryTitle: string = "";
+
+  const isMobile = useMediaQuery("(max-width:450px)");
 
   switch (params.mystery) {
     case "joyful":
@@ -40,7 +42,10 @@ function Mystery({ params }: { params: { mystery: string } }) {
 
   return (
     <Box className={styles.Mystery}>
-      <Typography variant="h4" className={styles.Mystery__Title}>
+      <Typography
+        variant={isMobile ? "h5" : "h4"}
+        className={styles.Mystery__Title}
+      >
         {mysteryTitle}
       </Typography>
       <Box className={styles.Mystery__Panel}>
@@ -52,10 +57,16 @@ function Mystery({ params }: { params: { mystery: string } }) {
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           ></iframe>
         </Box>
+
         <Box className={styles.Mystery__Center}>
           {mysteryData.map((mystery) => (
             <Box className={styles.Mystery__Card} key={mystery.title}>
-              <Typography variant="h4">{mystery.title}</Typography>
+              <Typography
+                variant={isMobile ? "h5" : "h4"}
+                sx={{ textAlign: "center" }}
+              >
+                {mystery.title}
+              </Typography>
 
               <img
                 src={mystery.imageLink}
@@ -63,7 +74,7 @@ function Mystery({ params }: { params: { mystery: string } }) {
                 alt="mystery image"
               />
               <Typography
-                variant="h6"
+                variant={isMobile ? "body1" : "h6"}
                 className={styles.Mystery__Card__reflection}
               >
                 {mystery.reflection}
@@ -73,11 +84,17 @@ function Mystery({ params }: { params: { mystery: string } }) {
               </Typography>
             </Box>
           ))}
-          <Typography variant="h5" margin={"20px 0 10px 0"}>
-            After the 5th Mystery{" "}
+          <Typography
+            variant={isMobile ? "h6" : "h5"}
+            margin={"20px 0 10px 0"}
+            textAlign={"center"}
+          >
+            After the 5th Mystery
           </Typography>
           <Box className={styles.Mystery__Card}>
-            <Typography variant="h4">Hail Holy Queen (Salve Regina)</Typography>
+            <Typography variant={isMobile ? "h5" : "h4"}>
+              Hail Holy Queen (Salve Regina)
+            </Typography>
             <img
               src="https://img.freepik.com/premium-photo/virgen-del-carmen-blessed-virgin-mary-faith-bible-theology-mother-god-christianity-carmel-mother-jesus-christ-one-central-figures-european-world-culture-generative-ai_887181-3576.jpg"
               className={styles.Mystery__Card__img}
@@ -85,7 +102,7 @@ function Mystery({ params }: { params: { mystery: string } }) {
             />
 
             <Typography
-              variant="h6"
+              variant={isMobile ? "body1" : "h6"}
               className={styles.Mystery__Card__reflection}
             >
               Hail, holy Queen, Mother of mercy, our life, our sweetness and our
@@ -104,7 +121,7 @@ function Mystery({ params }: { params: { mystery: string } }) {
             <Tooltip title="https://www.dummies.com/article/body-mind-spirit/religion-spirituality/christianity/catholicism/how-to-pray-the-rosary-192609/">
               <img
                 src="https://www.dummies.com/wp-content/uploads/195875.image0.jpg"
-                style={{ mixBlendMode: "multiply" }}
+                style={{ mixBlendMode: "multiply", objectFit: "contain" }}
                 alt="rosary reference"
               />
             </Tooltip>
